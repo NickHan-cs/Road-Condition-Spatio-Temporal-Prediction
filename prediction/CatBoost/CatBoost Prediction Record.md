@@ -47,3 +47,19 @@ not_used_columns = [
 | random_seed | split_rs |
 | ----------- | -------- |
 | 1019        | 413      |
+
+#### 20190801_2020-11-22-13-37-20_0.5996.csv
+
+train datasets:	0708
+
+not used features:
+
+```python
+not_used_columns = [
+        'link_id', 'future_label', 'curr_slice_id', 'label_pred',
+]
+```
+
+| random_seed | split_rs |
+| ----------- | -------- |
+| 2020        | 666      |
