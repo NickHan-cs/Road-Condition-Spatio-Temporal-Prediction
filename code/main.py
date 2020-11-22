@@ -1,10 +1,12 @@
 import pandas as pd
 from lightgbm_model import lgb_train
+from catboost_model import cb_train
+from xgboost_model import xgb_train
 import time
 
 
 if __name__ == "__main__":
-    train_data_df = pd.read_csv("../features/train/train_features_20190711.txt")
+    train_data_df = pd.read_csv("../features/train/train_features_20190708.txt")
     test_data_df = pd.read_csv("../features/test/test_features_20190801.csv")
     not_used_columns = [
         'link_id', 'future_label', 'curr_slice_id', 'label_pred',
@@ -41,8 +43,8 @@ if __name__ == "__main__":
     ]
     used_columns = [i for i in train_data_df if i not in not_used_columns]
 
-    lgb_result_file, lgb_result_score = lgb_train(train_data_df, test_data_df, used_columns, 5, 413)
-    lgb_result_score = round(lgb_result_score, 4)
+    result_file, result_score = cb_train(train_data_df, test_data_df, used_columns, 5, 888)
+    result_score = round(result_score, 4)
     now = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime(time.time()))
-    lgb_result_file_path = f"../prediction/LightGBM/20190801_{now}_{lgb_result_score}.csv"
-    lgb_result_file.to_csv(lgb_result_file_path, index=False, encoding='utf8')
+    result_file_path = f"../prediction/CatBoost/20190801_{now}_{result_score}.csv"
+    result_file.to_csv(result_file_path, index=False, encoding='utf8')

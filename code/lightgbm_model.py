@@ -32,7 +32,6 @@ def lgb_train(train_df: pd.DataFrame, test_df: pd.DataFrame, used_train_features
     # k-交叉验证, random_state是随机数生成使用的随机种子，控制随机状态，设置不同的随机种子，每次构建的模型是不同的
     folds = KFold(n_splits=n_splits, shuffle=is_shuffle, random_state=split_rs)
     train_link_id = train_df["link_id"].unique()
-    print(len(train_link_id))
     params = {
         'learning_rate': 0.05,  # 学习率
         'boosting_type': 'gbdt',  # 基学习器模型算法，'gbdt'--传统的梯度提升决策树
@@ -43,9 +42,9 @@ def lgb_train(train_df: pd.DataFrame, test_df: pd.DataFrame, used_train_features
         'feature_fraction': 0.8,  # 建树的特征选择比例
         'bagging_fraction': 0.8,  # 建树的样本采样比例
         'bagging_freq': 5,  # k 每k次执行bagging
-        'seed': 4,
-        'bagging_seed': 1,  # 表示bagging的随机数种子
-        'feature_fraction_seed': 3,  # 表示feature_fraction的随机数种子
+        'seed': 6,
+        'bagging_seed': 6,  # 表示bagging的随机数种子
+        'feature_fraction_seed': 6,  # 表示feature_fraction的随机数种子
         'min_data_in_leaf': 20,  # 表示一个叶子节点上包含的最少样本数量，默认20
         'nthread': -1,
         'verbose': -1
@@ -71,7 +70,7 @@ def lgb_train(train_df: pd.DataFrame, test_df: pd.DataFrame, used_train_features
             train_set=dtrain,
             num_boost_round=5000,
             valid_sets=[dvalid],
-            early_stopping_rounds=100,
+            early_stopping_rounds=200,
             verbose_eval=100,
             feval=f1_score_eval
         )

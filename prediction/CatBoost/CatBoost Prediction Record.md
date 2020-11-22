@@ -63,3 +63,39 @@ not_used_columns = [
 | random_seed | split_rs |
 | ----------- | -------- |
 | 2020        | 666      |
+
+#### 20190801_2020-11-22-14-24-50_0.6085.csv
+
+train datasets:	0706
+
+not used features:
+
+```python
+not_used_columns = [
+        'link_id', 'future_label', 'curr_slice_id', 'label_pred',
+]
+```
+
+| random_seed | split_rs |
+| ----------- | -------- |
+| 666         | 2020     |
+
+#### 20190801_2020-11-22-20-57-46_0.5989.csv
+
+train datasets:	0708
+
+depth: 6 -> 7
+
+early_stopping_rounds: 100 -> 200
+
+not used features:
+
+```python
+not_used_columns = [
+        'link_id', 'future_label', 'curr_slice_id', 'label_pred',
+]
+```
+
+| random_seed | split_rs |
+| ----------- | -------- |
+| 888         | 888      |
