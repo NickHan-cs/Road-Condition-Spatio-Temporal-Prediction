@@ -50,10 +50,10 @@ def cb_train(train_df: pd.DataFrame, test_df: pd.DataFrame, used_train_features:
         cb_model = CatBoostClassifier(
             iterations=5000,
             learning_rate=0.05,
-            depth=7,
+            depth=6,
             l2_leaf_reg=5,
-            random_seed=888,
-            early_stopping_rounds=200,
+            random_seed=1019,
+            early_stopping_rounds=100,
             verbose=100,
             loss_function='MultiClass',
             eval_metric=WeightedF1Metric(),

@@ -99,3 +99,83 @@ not_used_columns = [
 | random_seed | split_rs |
 | ----------- | -------- |
 | 888         | 888      |
+
+#### 20190801_2020-11-22-22-18-57_0.5937.csv
+
+train datasets:	0704
+
+not used features:
+
+```python
+not_used_columns = [
+        'link_id', 'future_label', 'curr_slice_id', 'label_pred',
+]
+```
+
+| random_seed | split_rs |
+| ----------- | -------- |
+| 1019        | 413      |
+
+#### 20190801_2020-11-23-00-43-04_0.6138.csv
+
+train datasets:	0713
+
+not used features:
+
+```python
+not_used_columns = [
+        'link_id', 'future_label', 'curr_slice_id', 'label_pred',
+]
+```
+
+| random_seed | split_rs |
+| ----------- | -------- |
+| 1019        | 413      |
+
+#### 20190801_2020-11-23-01-42-15_0.6263.csv
+
+train datasets:	0720
+
+not used features:
+
+```python
+not_used_columns = [
+        'link_id', 'future_label', 'curr_slice_id', 'label_pred',
+]
+```
+
+| random_seed | split_rs |
+| ----------- | -------- |
+| 1019        | 413      |
+
+#### 20190801_2020-11-23-18-42-20_0.6086.csv
+
+train datasets:	0716
+
+not used features:
+
+```python
+not_used_columns = [
+        'link_id', 'future_label', 'curr_slice_id', 'label_pred',
+]
+```
+
+| random_seed | split_rs |
+| ----------- | -------- |
+| 1019        | 413      |
+
+#### 20190801_2020-11-23-19-37-02_0.626.csv
+
+train datasets:	0722
+
+not used features:
+
+```python
+not_used_columns = [
+        'link_id', 'future_label', 'curr_slice_id', 'label_pred',
+]
+```
+
+| random_seed | split_rs |
+| ----------- | -------- |
+| 1019        | 413      |

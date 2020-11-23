@@ -42,9 +42,9 @@ def lgb_train(train_df: pd.DataFrame, test_df: pd.DataFrame, used_train_features
         'feature_fraction': 0.8,  # 建树的特征选择比例
         'bagging_fraction': 0.8,  # 建树的样本采样比例
         'bagging_freq': 5,  # k 每k次执行bagging
-        'seed': 6,
-        'bagging_seed': 6,  # 表示bagging的随机数种子
-        'feature_fraction_seed': 6,  # 表示feature_fraction的随机数种子
+        'seed': 8,
+        'bagging_seed': 8,  # 表示bagging的随机数种子
+        'feature_fraction_seed': 8,  # 表示feature_fraction的随机数种子
         'min_data_in_leaf': 20,  # 表示一个叶子节点上包含的最少样本数量，默认20
         'nthread': -1,
         'verbose': -1
@@ -70,7 +70,7 @@ def lgb_train(train_df: pd.DataFrame, test_df: pd.DataFrame, used_train_features
             train_set=dtrain,
             num_boost_round=5000,
             valid_sets=[dvalid],
-            early_stopping_rounds=200,
+            early_stopping_rounds=100,
             verbose_eval=100,
             feval=f1_score_eval
         )
