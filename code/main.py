@@ -43,8 +43,8 @@ if __name__ == "__main__":
     ]
     used_columns = [i for i in train_data_df if i not in not_used_columns]
 
-    result_file, result_score = lgb_train(train_data_df, test_data_df, used_columns, 5, 666)
+    result_file, result_score = cb_train(train_data_df, test_data_df, used_columns, 5, 666)
     result_score = round(result_score, 4)
     now = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime(time.time()))
-    result_file_path = f"../prediction/LightGBM/20190801_{now}_{result_score}.csv"
+    result_file_path = f"../prediction/CatBoost/20190801_{now}_{result_score}.csv"
     result_file.to_csv(result_file_path, index=False, encoding='utf8')

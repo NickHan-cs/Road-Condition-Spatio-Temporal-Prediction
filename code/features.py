@@ -121,7 +121,7 @@ def generate_features(path, mode="train"):
 
 
 if __name__ == "__main__":
-    raw_train_data_path = "../data/train/traffic/201907" + str(i) + ".txt"
+    raw_train_data_path = "../data/train/traffic/20190701.txt"
     raw_test_data_path = "../data/test/20190801_testdata.txt"
     attr_df = pd.read_csv("../data/train/attr.txt", sep='\t',
                           names=['link_id', 'length', 'direction', 'path_class', 'speed_class', 'LaneNum',
