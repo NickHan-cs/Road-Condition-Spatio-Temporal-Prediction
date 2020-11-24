@@ -18,13 +18,6 @@ def lgb_cb_fusion(label_list) -> int:
     if cnt[2] > 0:
         return 2
     return 1
-    '''
-    if cnt[2] > cnt[1]:
-        return 2
-    if cnt[1] > cnt[2]:
-        return 1
-    return 2
-    '''
 
 
 pred_rlt_list = [
@@ -38,6 +31,18 @@ pred_rlt_list = [
     pd.read_csv("../prediction/LightGBM/20190801_2020-11-23-17-07-01_0.6296.csv"),
     pd.read_csv("../prediction/LightGBM/20190801_2020-11-20-16-52-04_0.6123.csv"),
 
+    pd.read_csv("../prediction/LightGBM/20190801_2020-11-23-22-26-59_0.5898.csv"),
+    pd.read_csv("../prediction/LightGBM/20190801_2020-11-23-23-17-42_0.6054.csv"),
+    pd.read_csv("../prediction/LightGBM/20190801_2020-11-23-23-33-26_0.5958.csv"),
+    pd.read_csv("../prediction/LightGBM/20190801_2020-11-23-23-42-10_0.6176.csv"),
+    pd.read_csv("../prediction/LightGBM/20190801_2020-11-23-23-53-24_0.5855.csv"),
+    pd.read_csv("../prediction/LightGBM/20190801_2020-11-24-10-27-16_0.5966.csv"),
+    pd.read_csv("../prediction/LightGBM/20190801_2020-11-24-10-44-47_0.5803.csv"),
+    pd.read_csv("../prediction/LightGBM/20190801_2020-11-24-10-57-40_0.5801.csv"),
+    pd.read_csv("../prediction/LightGBM/20190801_2020-11-24-11-05-41_0.5907.csv"),
+    pd.read_csv("../prediction/LightGBM/20190801_2020-11-24-11-12-16_0.6178.csv"),
+    pd.read_csv("../prediction/LightGBM/20190801_2020-11-24-11-24-40_0.6022.csv"),
+
     pd.read_csv("../prediction/CatBoost/20190801_2020-11-22-14-24-50_0.6085.csv"),
     pd.read_csv("../prediction/CatBoost/20190801_2020-11-22-13-37-20_0.5996.csv"),
     pd.read_csv("../prediction/CatBoost/20190801_2020-11-22-11-18-33_0.5935.csv"),
@@ -47,6 +52,18 @@ pred_rlt_list = [
     pd.read_csv("../prediction/CatBoost/20190801_2020-11-23-01-42-15_0.6263.csv"),
     pd.read_csv("../prediction/CatBoost/20190801_2020-11-23-19-37-02_0.626.csv"),
     pd.read_csv("../prediction/CatBoost/20190801_2020-11-22-10-02-50_0.6096.csv"),
+
+    pd.read_csv("../prediction/CatBoost/20190801_2020-11-23-21-27-55_0.6019.csv"),
+    pd.read_csv("../prediction/CatBoost/20190801_2020-11-23-22-18-20_0.5863.csv"),
+    pd.read_csv("../prediction/CatBoost/20190801_2020-11-24-01-08-23_0.5937.csv"),
+    pd.read_csv("../prediction/CatBoost/20190801_2020-11-24-01-56-19_0.615.csv"),
+    pd.read_csv("../prediction/CatBoost/20190801_2020-11-24-07-59-57_0.5822.csv"),
+    pd.read_csv("../prediction/CatBoost/20190801_2020-11-24-09-01-03_0.6096.csv"),
+    pd.read_csv("../prediction/CatBoost/20190801_2020-11-24-13-11-36_0.5783.csv"),
+    pd.read_csv("../prediction/CatBoost/20190801_2020-11-24-14-17-26_0.5744.csv"),
+    pd.read_csv("../prediction/CatBoost/20190801_2020-11-24-15-21-33_0.586.csv"),
+    pd.read_csv("../prediction/CatBoost/20190801_2020-11-24-16-20-58_0.6169.csv"),
+    pd.read_csv("../prediction/CatBoost/20190801_2020-11-24-17-08-15_0.6007.csv"),
 ]
 
 for i in range(len(pred_rlt_list)):
@@ -61,4 +78,4 @@ df["label"] = df.apply(lambda x: lgb_cb_fusion(
 for label_i in range(len(pred_rlt_list)):
     del df[f"label{label_i}"]
 df = df.rename(columns={'link_id': 'link', 'curr_slice_id': 'current_slice_id'})
-df.to_csv("../prediction/model_fusion/lgb_cb_fusion_6.csv", index=False, encoding='utf8')
+df.to_csv("../prediction/model_fusion/lgb_cb_fusion_9.csv", index=False, encoding='utf8')

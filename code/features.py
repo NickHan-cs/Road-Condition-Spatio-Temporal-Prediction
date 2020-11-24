@@ -121,11 +121,10 @@ def generate_features(path, mode="train"):
 
 
 if __name__ == "__main__":
-    for i in range(26, 31):
-        raw_train_data_path = "../data/train/traffic/201907" + str(i) + ".txt"
-        raw_test_data_path = "../data/test/20190801_testdata.txt"
-        attr_df = pd.read_csv("../data/train/attr.txt", sep='\t',
-                              names=['link_id', 'length', 'direction', 'path_class', 'speed_class', 'LaneNum',
-                                     'speed_limit', 'level', 'width'], header=None)
-        generate_features(raw_train_data_path, mode="train")
+    raw_train_data_path = "../data/train/traffic/201907" + str(i) + ".txt"
+    raw_test_data_path = "../data/test/20190801_testdata.txt"
+    attr_df = pd.read_csv("../data/train/attr.txt", sep='\t',
+                          names=['link_id', 'length', 'direction', 'path_class', 'speed_class', 'LaneNum',
+                                 'speed_limit', 'level', 'width'], header=None)
+    generate_features(raw_train_data_path, mode="train")
     # generate_features(raw_test_data_path, mode="test")
