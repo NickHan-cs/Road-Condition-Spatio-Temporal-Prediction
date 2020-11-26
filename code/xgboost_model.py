@@ -67,7 +67,6 @@ def xgb_train(train_df: pd.DataFrame, test_df: pd.DataFrame, used_train_features
             feval=f1_score_eval,
             maximize=True
         )
-
         train_df.loc[train_df["link_id"].isin(train_link_id[valid_idx]), 'label_pred'] = np.argmax(
             xgb_model.predict(xgb.DMatrix(valid_x), ntree_limit=xgb_model.best_iteration), axis=1)
         print(Counter(np.argmax(xgb_model.predict(xgb.DMatrix(valid_x), ntree_limit=xgb_model.best_iteration), axis=1)))

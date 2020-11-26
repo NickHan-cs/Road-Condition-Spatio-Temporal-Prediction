@@ -4,15 +4,20 @@
 
 |     日期      | 线下分数 |
 | :-----------: | :------: |
+| 2019年7月1日  |  56.82   |
+| 2019年7月2日  |   56.4   |
+| 2019年7月3日  |  56.53   |
 | 2019年7月4日  |  59.37   |
-| 2019年7月5日  |  58.22   |
+| 2019年7月5日  |  58.48   |
 | 2019年7月6日  |  60.85   |
+| 2019年7月7日  |  57.17   |
 | 2019年7月8日  |  59.96   |
 | 2019年7月9日  |  57.44   |
 | 2019年7月10日 |  57.83   |
 | 2019年7月11日 |  59.35   |
 | 2019年7月12日 |  58.63   |
 | 2019年7月13日 |  61.38   |
+| 2019年7月14日 |  58.93   |
 | 2019年7月15日 |   58.6   |
 | 2019年7月16日 |  60.86   |
 | 2019年7月17日 |  59.37   |
@@ -20,10 +25,14 @@
 | 2019年7月19日 |  60.19   |
 | 2019年7月20日 |  62.63   |
 | 2019年7月22日 |  62.60   |
+| 2019年7月23日 |  59.75   |
+| 2019年7月24日 |  57.59   |
 | 2019年7月25日 |  60.96   |
 | 2019年7月26日 |   61.5   |
 | 2019年7月27日 |  61.69   |
+| 2019年7月28日 |  59.23   |
 | 2019年7月29日 |  60.07   |
+| 2019年7月30日 |  57.61   |
 
 #### 20190801_2020-11-22-02-29-13_0.6075.csv
 
@@ -364,3 +373,183 @@ not_used_columns = [
 | random_seed | split_rs |
 | ----------- | -------- |
 | 1019        | 413      |
+
+#### 20190801_2020-11-24-21-48-36_0.5976.csv
+
+train datasets:	0723
+
+not used features:
+
+```python
+not_used_columns = [
+        'link_id', 'future_label', 'curr_slice_id', 'label_pred',
+]
+```
+
+| random_seed | split_rs |
+| ----------- | -------- |
+| 1019        | 666      |
+
+#### 20190801_2020-11-24-22-42-44_0.5653.csv
+
+train datasets:	0703
+
+not used features:
+
+```python
+not_used_columns = [
+        'link_id', 'future_label', 'curr_slice_id', 'label_pred',
+]
+```
+
+| random_seed | split_rs |
+| ----------- | -------- |
+| 1019        | 666      |
+
+#### 20190801_2020-11-25-00-21-32_0.5759.csv
+
+train datasets:	0724
+
+not used features:
+
+```python
+not_used_columns = [
+        'link_id', 'future_label', 'curr_slice_id', 'label_pred',
+]
+```
+
+| random_seed | split_rs |
+| ----------- | -------- |
+| 1019        | 666      |
+
+#### 20190801_2020-11-25-01-08-10_0.5971.csv
+
+train datasets:	0721
+
+not used features:
+
+```python
+not_used_columns = [
+        'link_id', 'future_label', 'curr_slice_id', 'label_pred',
+]
+```
+
+| random_seed | split_rs |
+| ----------- | -------- |
+| 1019        | 666      |
+
+#### 20190801_2020-11-25-16-02-56_0.5893.csv
+
+train datasets:	0714
+
+not used features:
+
+```python
+not_used_columns = [
+        'link_id', 'future_label', 'curr_slice_id', 'label_pred',
+]
+```
+
+| random_seed | split_rs |
+| ----------- | -------- |
+| 1019        | 666      |
+
+#### 20190801_2020-11-25-16-49-30_0.5761.csv
+
+train datasets:	0730
+
+not used features:
+
+```python
+not_used_columns = [
+        'link_id', 'future_label', 'curr_slice_id', 'label_pred',
+]
+```
+
+| random_seed | split_rs |
+| ----------- | -------- |
+| 1019        | 666      |
+
+#### 20190801_2020-11-25-18-00-22_0.5717.csv
+
+train datasets:	0707
+
+not used features:
+
+```python
+not_used_columns = [
+        'link_id', 'future_label', 'curr_slice_id', 'label_pred',
+]
+```
+
+| random_seed | split_rs |
+| ----------- | -------- |
+| 1019        | 666      |
+
+#### 20190801_2020-11-25-21-54-36_0.5682.csv
+
+train datasets:	0701
+
+not used features:
+
+```python
+not_used_columns = [
+        'link_id', 'future_label', 'curr_slice_id', 'label_pred',
+]
+```
+
+| random_seed | split_rs |
+| ----------- | -------- |
+| 1019        | 666      |
+
+#### 20190801_2020-11-25-22-50-40_0.564.csv
+
+train datasets:	0702
+
+not used features:
+
+```python
+not_used_columns = [
+        'link_id', 'future_label', 'curr_slice_id', 'label_pred',
+]
+```
+
+| random_seed | split_rs |
+| ----------- | -------- |
+| 1019        | 666      |
+
+#### 20190801_2020-11-25-23-29-25_0.5923.csv
+
+train datasets:	0728
+
+not used features:
+
+```python
+not_used_columns = [
+        'link_id', 'future_label', 'curr_slice_id', 'label_pred',
+]
+```
+
+| random_seed | split_rs |
+| ----------- | -------- |
+| 1019        | 666      |
+
+#### 20190801_2020-11-25-21-17-47_0.5848.csv
+
+train datasets:	0705
+
+depth: 6 -> 8
+
+early_stopping_rounds: 100 -> 200
+
+not used features:
+
+```python
+not_used_columns = [
+        'link_id', 'future_label', 'curr_slice_id', 'label_pred',
+]
+```
+
+| random_seed | split_rs |
+| ----------- | -------- |
+| 1019        | 666      |
