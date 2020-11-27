@@ -38,7 +38,7 @@ def get_his_label(x):
     his_label_list = []
     for i in x:
         his_label = int(i.split(',')[2])
-        his_label = 3 if his_label == 4 else his_label
+        his_label = 3 if his_label > 3 else his_label
         if his_label != 0:
             his_label -= 1
             his_label_list.append(his_label)
@@ -74,8 +74,8 @@ def generate_features(path, mode="train"):
         traffic_df.apply(lambda x: x['curr_car_cnt'] / (x['length'] * x['LaneNum']), axis=1)
     traffic_df['curr_label'] = traffic_df['curr_features'].apply(lambda x: int(x.split(',')[2]))
     # 对label进行处理
-    traffic_df['curr_label'].apply(lambda x: 3 if x == 4 else x)
-    traffic_df['curr_label'] -= 1
+    traffic_df['curr_label'] = traffic_df['curr_label'].apply(lambda x: 3 if x > 3 else x)
+    traffic_df['curr_label'] = traffic_df['curr_label'] - 1
     del traffic_df[0], traffic_df['curr_features']
 
     # tqdm为进度条库
@@ -100,8 +100,14 @@ def generate_features(path, mode="train"):
         traffic_df[f'{time_flag}_car_cnt_mean'] = traffic_df['his_car_cnt'].apply(lambda x: x.mean())
         traffic_df[f'{time_flag}_car_cnt_std'] = traffic_df['his_car_cnt'].apply(lambda x: x.std())
         # 增加新特征unit_car_cnt_mean
+        traffic_df[f'{time_flag}_unit_car_cnt_min'] = traffic_df.apply(
+            lambda x: x[f'{time_flag}_car_cnt_min'] / (x['length'] * x['LaneNum']), axis=1)
+        traffic_df[f'{time_flag}_unit_car_cnt_max'] = traffic_df.apply(
+            lambda x: x[f'{time_flag}_car_cnt_max'] / (x['length'] * x['LaneNum']), axis=1)
         traffic_df[f'{time_flag}_unit_car_cnt_mean'] = traffic_df.apply(
             lambda x: x[f'{time_flag}_car_cnt_mean'] / (x['length'] * x['LaneNum']), axis=1)
+        traffic_df[f'{time_flag}_unit_car_cnt_std'] = traffic_df.apply(
+            lambda x: x[f'{time_flag}_car_cnt_std'] / (x['length'] * x['LaneNum']), axis=1)
 
         traffic_df['his_label'] = traffic_df['his_features'].apply(get_his_label)
         traffic_df[f'{time_flag}_label'] = traffic_df['his_label'].apply(lambda x: Counter(x).most_common()[0][0])
@@ -117,14 +123,15 @@ def generate_features(path, mode="train"):
     if mode == 'train':
         traffic_df.to_csv(f"../features/train/{mode}_features_{path.split('/')[-1]}", index=False)
     else:
-        traffic_df.to_csv(f"../features/test/test_features_20190801.csv", index=False)
+        traffic_df.to_csv(f"../features/test/test_features_20190801_1.csv", index=False)
 
 
 if __name__ == "__main__":
-    raw_train_data_path = "../data/train/traffic/20190701.txt"
-    raw_test_data_path = "../data/test/20190801_testdata.txt"
-    attr_df = pd.read_csv("../data/train/attr.txt", sep='\t',
-                          names=['link_id', 'length', 'direction', 'path_class', 'speed_class', 'LaneNum',
-                                 'speed_limit', 'level', 'width'], header=None)
-    generate_features(raw_train_data_path, mode="train")
-    # generate_features(raw_test_data_path, mode="test")
+    for i in range(10, 21):
+        raw_train_data_path = f"../data/train/traffic/201907{i}.txt"
+        raw_test_data_path = "../data/test/20190801_testdata.txt"
+        attr_df = pd.read_csv("../data/train/attr.txt", sep='\t',
+                              names=['link_id', 'length', 'direction', 'path_class', 'speed_class', 'LaneNum',
+                                     'speed_limit', 'level', 'width'], header=None)
+        generate_features(raw_train_data_path, mode="train")
+    #generate_features(raw_test_data_path, mode="test")
